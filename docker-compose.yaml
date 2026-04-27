@@ -1,9 +1,11 @@
 services:
-  web-app:
-    build: .
+  random-gen:
+    build:
+      context: .
+      dockerfile: ./Dockerfile  # Added ./ to be explicit
+    container_name: random-string-app
     ports:
       - "3000:3000"
     restart: always
-    # This labels Traefik so Coolify knows where to route your domain
     labels:
       - "coolify.managed=true"
