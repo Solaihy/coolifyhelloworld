@@ -4,12 +4,10 @@ services:
     container_name: persistent-counter
     ports:
       - "3000:3000"
-    volumes:
-      - stats-data:/data
     restart: always
     labels:
       - "coolify.managed=true"
-
-volumes:
-  stats-data:
-    driver: local
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.gzip.compress=true"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.services.web.loadbalancer.server.port=3000"
