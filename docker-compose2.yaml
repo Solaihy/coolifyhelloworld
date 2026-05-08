@@ -2,7 +2,7 @@ services:
   visitor-counter:
     build:
       context: .
-      dockerfile: ./Dockerfile2
+      dockerfile: ./Dockerfile3
     container_name: persistent-counter
     ports:
       - "3000:3000"
