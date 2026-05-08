@@ -5,4 +5,4 @@ RUN bun install sqlite3
 # Ensure the /data directory exists inside the container
 RUN mkdir -p /data
 EXPOSE 3000
-CMD ["bun", "server3.js"]
+CMD ["bun", "server2.js"]
