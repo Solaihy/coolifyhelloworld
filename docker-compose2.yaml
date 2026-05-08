@@ -4,8 +4,6 @@ services:
       context: .
       dockerfile: ./Dockerfile3
     container_name: persistent-counter
-    ports:
-      - "3000:3000"
     restart: always
     labels:
       - "coolify.managed=true"
